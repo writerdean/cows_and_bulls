@@ -29,7 +29,6 @@ input {
   border: 2px solid black;
   border-radius: 5px;
   font-size: 1rem;
-  /* background: transparent; */
 }
 
 #playAgain {
@@ -43,7 +42,7 @@ input {
 
 footer {
   position: absolute;
-  margin-right: 0;
+  margin-right: 0%;
   margin-bottom: 0;
   font-size: .5rem;
 }

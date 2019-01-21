@@ -33,16 +33,10 @@ function getScore() {
   // currentGuess = guess.value
   // console.log('getScore now running')
   secret = arr.join('')
-  // console.log('secret in getScore: ' + secret + typeof(secret))
-  // console.log('currentGuess in getScore: ' + currentGuess + typeof(currentGuess))
-  // console.log('currentGuess.value in getScore: ' + currentGuess.value + typeof(currentGuess.value))
-  // currentGuess = currentGuess.value
   count.cows = 0
   count.bulls = 0
   for (i = 0; i < secret.length; i++) {
-    let currDigit = currentGuess.search(secret[i]) != -1  // this searches through currentGuess, looking to see if secret[i] is in that string, if so, it returns the index where the first occurrance is.  If it's not in there at all, it returns -1
-    // console.log(secret[i])
-    // console.log(currentGuess[i])
+    let currDigit = currentGuess.search(secret[i]) != -1  // this searches through currentGuess, looking to see if secret[i] is in that string; if so, it returns the index where the first occurrance is.  If it's not in there at all, it returns -1
       if (secret[i] == currentGuess[i]) {
         count.bulls = count.bulls + 1
         // console.log('Bulls: ' + count.bulls)
@@ -52,9 +46,9 @@ function getScore() {
       }
   }
   alreadyGuessed.unshift([currentGuess, count.bulls, count.cows])
-  // console.log('alreadyGuessed in getScore: ' + alreadyGuessed)
+  console.log('alreadyGuessed in getScore: ' + alreadyGuessed)
 
-    scoreArea.innerHTML += `<p>${alreadyGuessed[0][0]}, ${count.bulls} <img src=${bullIcon}>,  ${count.cows} <img src=${cowIcon}></p>`
+    scoreArea.innerHTML = `<p>${alreadyGuessed[0][0]} - (${count.bulls} <img src=${bullIcon}>) (${count.cows} <img src=${cowIcon}>)  ${scoreArea.innerHTML}</p>`
   guesses++
   // console.log('guesses now: ' + guesses)
 
@@ -63,22 +57,10 @@ function getScore() {
 
 // this checks to see if there is a winner
 function checkBovine() {
-  // currentGuess = guess.value
-  // console.log('checkBovine now running')
   // debugger
       if (count.bulls < 4) {
-        // console.log('This is from checkBovine, count.bulls < 4')
-        // console.log(`Bulls = ${count.bulls} and winner = ${winner}`)
-        // guessAgain.classList.remove('hidden')
-        // getScore()
-        // console.log('At this point, the player needs to be promted to guess again.')
-        // playerGuess = prompt(`That's not quite it.  Guess again?  Current Score: ${count.bulls}B ${count.cows}C`)
         toggleMenu()
       } else if (count.bulls == 4) {
-        // console.log('This is from checkBovine, count.bulls == 4')
-        // console.log(`Bulls = ${count.bulls} and winner = ${winner}`)
-          // winner = true
-          // console.log(`Bulls = ${count.bulls} and winner = ${winner}`)
           playAgain.classList.remove('hidden')
           hideAllWrappers()
           // guessAgain.classList.add('hidden')

@@ -40,3 +40,13 @@ input {
   margin-top: 10px;
   padding: 5px;
 }
+
+footer {
+  position: absolute;
+  margin-right: 0;
+  margin-bottom: 0;
+  font-size: .5rem;
+}
+.score {
+  font-size: 30px;
+}

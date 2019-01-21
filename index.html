@@ -10,7 +10,9 @@
 </head>
 <body>
 
-    <div class='text'><p>I have chosen a number, four digits long, with no repeats. Can you guess the number?</p></div>
+    <div class='text'><p>I have chosen a number, four digits long, with no repeats.</p>
+    <p>The number of bulls indicates the number of digits you guessed that were both the correct number and in the correct oosition.  </p><p>The number of cows indicates the number of (non-bull) digits you guessed that were the correct number, but in the wrong position.</p>
+    <p>Can you guess the number in 10 tries?</p></div>
 
     <input id='playAgain' class='hidden' type="button" value="Play Again?" onclick='location.reload(true);'/>
 
@@ -78,8 +80,24 @@
 
 
 <div class='score'></div>
-
-  <script src="app.js"></script>
-  <!-- <script src="rosetta.js"></script> -->
+<footer><a href="https://icons8.com/icon/1287/cow">Cow icon by Icons8</a><a href="https://icons8.com/icon/98937/bull">Bull icon by Icons8</a>
+    <a href="https://imageresize.org" target="_blank">Image Resizer</a></footer>
+<script src="app.js"></script>
+<!-- <script src="rosetta.js"></script> -->
 </body>
 </html>
+
+
+
+<!-- print();
+print('Bulls and Cows Game');
+print('-------------------');
+print('  You must guess the ' + len + ' digit number I am thinking of.');
+print('  The number is composed of the digits 1-9.');
+print('  No digit appears more than once.');
+print('  After each of your guesses, I will tell you:');
+print('    The number of bulls (digits in right place)');
+print('    The number of cows (correct digits, but in the wrong place)');
+print();
+
+The computer will create a number.  The number only has the digits 1-9, and each digit is only used once (no duplicates).  -->

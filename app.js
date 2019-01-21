@@ -11,6 +11,8 @@ let scoreArea = document.querySelector('.score')
 let inputNumbers = document.querySelectorAll('.number')
 let currentGuess = 0
 let text = document.querySelector('.text')
+let cowIcon = 'images/cowIcon30.png'
+let bullIcon = 'images/bullIcon30.png'
 
 
 // this creates the secret number to guess
@@ -49,10 +51,10 @@ function getScore() {
         // console.log('Cows: ' + count.cows)
       }
   }
-  alreadyGuessed.unshift([currentGuess, count.bulls + 'B', count.cows + 'C'])
+  alreadyGuessed.unshift([currentGuess, count.bulls, count.cows])
   // console.log('alreadyGuessed in getScore: ' + alreadyGuessed)
 
-    scoreArea.innerHTML += `<p>${alreadyGuessed[0]}</p>`
+    scoreArea.innerHTML += `<p>${alreadyGuessed[0][0]}, ${count.bulls} <img src=${bullIcon}>,  ${count.cows} <img src=${cowIcon}></p>`
   guesses++
   // console.log('guesses now: ' + guesses)
 
@@ -87,7 +89,7 @@ function checkBovine() {
       }
   }
   function loser() {
-    text.textContent = 'You did not guess the correct number.  Would you like to try again with a new number?'
+    text.textContent = `You did not guess the correct number, ${arr.join('')}.  Would you like to try again with a new number?`
   }
 
   function toggleMenu() {

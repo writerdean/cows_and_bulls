@@ -7,3 +7,5 @@ simple javascript game of cows and bulls
 - style scoring
 - include instruction
 - if you don't win, show the secret number
+
+- fix styling on mobile site (too small of margin-top)

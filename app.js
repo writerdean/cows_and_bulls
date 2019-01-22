@@ -80,7 +80,9 @@ function checkBovine() {
       }
   }
   function loser() {
+    hideAllWrappers()
     text.classList.add('hidden')
+    document.querySelector('#playAgain').classList.remove('hidden')
     losingText.classList.remove('hidden')
     losing_secret_num.innerHTML = `${secret}`
   }
@@ -91,8 +93,8 @@ function checkBovine() {
     wrappers[guesses].classList.remove('hidden')
     input.focus()
     } else if (guesses == 10 && count.bulls != 4) {
-      hideAllWrappers()
-      document.querySelector('#playAgain').classList.remove('hidden')
+      // hideAllWrappers()
+      // document.querySelector('#playAgain').classList.remove('hidden')
       loser()
     }
   }
@@ -110,3 +112,5 @@ function checkBovine() {
       buttons[guesses].click()
     }
   })
+
+  

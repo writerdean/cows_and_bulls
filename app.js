@@ -6,9 +6,11 @@ let alreadyGuessed = []
 let count = {bulls: 0, cows: 0}
 let guesses = 0
 let currentGuess = 0
+let main = document.querySelector('.main')
 let wrappers = document.querySelectorAll('.wrapper')
 let already_guessed_display = document.querySelector('already-guessed')
 let scoreArea = document.querySelector('.score')
+let buttons = document.getElementsByTagName('button')
 let inputNumbers = document.querySelectorAll('.number')
 let input = document.querySelectorAll('.number')[guesses]
 let text = document.querySelector('.text')
@@ -100,3 +102,11 @@ function checkBovine() {
       el.classList.add('hidden')
     })
   }
+
+
+  main.addEventListener('keyup', function(event) {
+    event.preventDefault()
+    if(event.keyCode == 13) {
+      buttons[guesses].click()
+    }
+  })

@@ -9,6 +9,7 @@ let guesses = 0
 let already_guessed_display = document.querySelector('already-guessed')
 let scoreArea = document.querySelector('.score')
 let inputNumbers = document.querySelectorAll('.number')
+// let currentFocus = inputNumbers[guesses].focus()
 let currentGuess = 0
 let text = document.querySelector('.text')
 let cowIcon = 'images/cowIcon30.png'
@@ -48,7 +49,7 @@ function getScore() {
   alreadyGuessed.unshift([currentGuess, count.bulls, count.cows])
   console.log('alreadyGuessed in getScore: ' + alreadyGuessed)
 
-    scoreArea.innerHTML = `<p>${alreadyGuessed[0][0]} - (${count.bulls} <img src=${bullIcon}>) (${count.cows} <img src=${cowIcon}>)  ${scoreArea.innerHTML}</p>`
+    scoreArea.innerHTML = `<p>${alreadyGuessed[0][0]} - ${count.bulls}<img src=${bullIcon}>    ${count.cows}<img src=${cowIcon}>  ${scoreArea.innerHTML}</p>`
   guesses++
   // console.log('guesses now: ' + guesses)
 

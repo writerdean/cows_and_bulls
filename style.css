@@ -3,8 +3,8 @@
 }
 
 body {
-  height: 675px;
-  background-color: brown;
+  /* height: 675px; */
+  background-color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.25rem;
   text-align: center;
@@ -36,16 +36,37 @@ input {
 }
 
 .text {
+  font-size: .75rem;
   margin-top: 10px;
   padding: 5px;
 }
 
 footer {
-  position: absolute;
+  position: fixed; 
+  bottom:0%;
   margin-right: 0%;
-  margin-bottom: 0;
   font-size: .5rem;
 }
 .score {
+  /* border: 3px solid red; */
+  max-height: 365px;
+  margin-top: 10px;
   font-size: 30px;
+  overflow: scroll;
 }
+
+.red {
+  color: red;
+}
+
+/* mobile {
+  smaller text
+} */
+
+/* scroll {
+  scrollable, focus always at top
+} */
+
+/* input {
+  focus on input for each guess
+} */

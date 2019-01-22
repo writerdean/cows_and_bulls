@@ -2,12 +2,39 @@
   box-sizing: border-box;
 }
 
+/* div {
+  border: 3px solid red;
+} */
+
 body {
   /* height: 675px; */
   background-color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1.25rem;
+  font-size: 1rem;
   text-align: center;
+}
+
+.text {
+  font-size: .75rem;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.losing_secret_num {
+  color: red;
+}
+
+.winning_secret {
+  /* border: 5px solid blue; */
+  margin-top: 5px;
+  padding: 5px;
+  height: 25px;
+  font-size: 1.5rem;
+  color: blue;
+}
+
+#playAgain {
+  margin-top: 50px;
 }
 
 .number {
@@ -31,14 +58,12 @@ input {
   font-size: 1rem;
 }
 
-#playAgain {
+.score {
+  /* border: 3px solid red; */
+  max-height: 359px;
   margin-top: 10px;
-}
-
-.text {
-  font-size: .75rem;
-  margin-top: 10px;
-  padding: 5px;
+  font-size: 1.5rem;
+  overflow: scroll;
 }
 
 footer {
@@ -47,25 +72,14 @@ footer {
   margin-right: 0%;
   font-size: .5rem;
 }
-.score {
-  /* border: 3px solid red; */
-  max-height: 365px;
-  margin-top: 10px;
-  font-size: 30px;
-  overflow: scroll;
-}
 
-.red {
-  color: red;
-}
 
-/* mobile {
-  smaller text
-} */
 
-/* scroll {
-  scrollable, focus always at top
-} */
+/* Do stuff for mobile (outside any media queries) */
+/* @media only screen and (min-width : 768px) {
+  font-size: 1.25rem;
+                /* Do stuff for vertical tablet */
+ /*} */
 
 /* input {
   focus on input for each guess

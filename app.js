@@ -12,8 +12,12 @@ let inputNumbers = document.querySelectorAll('.number')
 // let currentFocus = inputNumbers[guesses].focus()
 let currentGuess = 0
 let text = document.querySelector('.text')
+let losingText = document.querySelector('.loser')
+let losing_secret_num = document.querySelector('.losing_secret_num')
+let winning_secret = document.querySelector('.winning_secret')
 let cowIcon = 'images/cowIcon30.png'
 let bullIcon = 'images/bullIcon30.png'
+let screenWidth = document.querySelector('#width')
 
 
 // this creates the secret number to guess
@@ -24,6 +28,7 @@ function createNumber() {
       arr.push(number)
     }
     console.log('Secret number: ' + arr.join(''))
+    // screenWidth.innerText = screen.width
   }
   createNumber()
 
@@ -64,15 +69,19 @@ function checkBovine() {
       } else if (count.bulls == 4) {
           playAgain.classList.remove('hidden')
           hideAllWrappers()
-          // guessAgain.classList.add('hidden')
-          scoreArea.innerHTML += `<p>You won using only ${guesses} guesses!</p>`
+          text.classList.add('hidden')
+          winning_secret.innerHTML = `<p>You won using only ${guesses} guesses!</p>`
+          winning_secret.classList.remove('hidden')
+          // scoreArea.innerHTML = `<p>You won using only ${guesses} guesses!</p>` + scoreArea.innerHTML
           return
       } else {
         return
       }
   }
   function loser() {
-    text.textContent = `You did not guess the correct number, ${arr.join('')}.  Would you like to try again with a new number?`
+    text.classList.add('hidden')
+    losingText.classList.remove('hidden')
+    losing_secret_num.innerHTML = `${secret}`
   }
 
   function toggleMenu() {

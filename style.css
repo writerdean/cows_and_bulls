@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-/* div {
-  border: 3px solid red;
-} */
-
 body {
   /* height: 675px; */
   background-color: white;
@@ -14,8 +10,35 @@ body {
   text-align: center;
 }
 
+/* The animation code */
+@keyframes playerWins {
+    0%   {color: red;}
+    16.65%  {color: orange;}
+    33.3%  {color: yellow;}
+    50%  {color: blue;}
+    66.6%  {color: green;}
+    83.25%  {color: indigo;}
+    100% {color: violet;}
+}
+
+/* The element to apply the animation to */
+.winning_secret {
+    margin-top: 5px;
+    padding: 5px;
+    height: 50px;
+    font-size: 1.5rem;
+    color: red;
+    animation-name: playerWins;
+    animation-duration: 1s;
+    /* animation-direction: alternate; */
+    animation-iteration-count: 5;
+}
+.winning_text {
+  font-size: 1.5rem;
+}
+
 .text {
-  font-size: .75rem;
+  font-size: 1rem;
   margin-top: 10px;
   padding: 5px;
 }
@@ -24,14 +47,14 @@ body {
   color: red;
 }
 
-.winning_secret {
+/* .winning_secret {
   /* border: 5px solid blue; */
   margin-top: 5px;
   padding: 5px;
   height: 25px;
   font-size: 1.5rem;
   color: blue;
-}
+} */
 
 #playAgain {
   margin-top: 50px;
@@ -62,7 +85,7 @@ input {
   /* border: 3px solid red; */
   max-height: 359px;
   margin-top: 10px;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   overflow: scroll;
 }
 

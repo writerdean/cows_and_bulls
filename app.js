@@ -4,17 +4,18 @@ let possibles = [1,2,3,4,5,6,7,8,9]
 let arr = []
 let alreadyGuessed = []
 let count = {bulls: 0, cows: 0}
-let wrappers = document.querySelectorAll('.wrapper')
 let guesses = 0
+let currentGuess = 0
+let wrappers = document.querySelectorAll('.wrapper')
 let already_guessed_display = document.querySelector('already-guessed')
 let scoreArea = document.querySelector('.score')
 let inputNumbers = document.querySelectorAll('.number')
-let inputFocus = inputNumbers[guesses].focus()
-let currentGuess = 0
+let input = document.querySelectorAll('.number')[guesses]
 let text = document.querySelector('.text')
 let losingText = document.querySelector('.loser')
 let losing_secret_num = document.querySelector('.losing_secret_num')
 let winning_secret = document.querySelector('.winning_secret')
+let winning_text = document.querySelector('.winning_text')
 let cowIcon = 'images/cowIcon30.png'
 let bullIcon = 'images/bullIcon30.png'
 
@@ -56,7 +57,7 @@ function getScore() {
   alreadyGuessed.unshift([currentGuess, count.bulls, count.cows])
   // console.log('alreadyGuessed in getScore: ' + alreadyGuessed)
 
-    scoreArea.innerHTML = `<p>${alreadyGuessed[0][0]} - ${count.bulls}<img src=${bullIcon}>    ${count.cows}<img src=${cowIcon}>  ${scoreArea.innerHTML}</p>`
+    scoreArea.innerHTML = `<p>Guess ${guesses + 1}: ${alreadyGuessed[0][0]} - ${count.bulls}<img src=${bullIcon}>    ${count.cows}<img src=${cowIcon}>  ${scoreArea.innerHTML}</p>`
   guesses++
     checkBovine()
 }
@@ -69,8 +70,8 @@ function checkBovine() {
           playAgain.classList.remove('hidden')
           hideAllWrappers()
           text.classList.add('hidden')
-          winning_secret.innerHTML = `<p>You won using only ${guesses} guesses!</p>`
-          winning_secret.classList.remove('hidden')
+          winning_secret.innerHTML = `${guesses}`
+          winning_text.classList.remove('hidden')
           return
       } else {
         return
@@ -86,7 +87,7 @@ function checkBovine() {
     hideAllWrappers()
     if (guesses < 10) {
     wrappers[guesses].classList.remove('hidden')
-    wrappers[guesses].focus()
+    input.focus()
     } else if (guesses == 10 && count.bulls != 4) {
       hideAllWrappers()
       document.querySelector('#playAgain').classList.remove('hidden')

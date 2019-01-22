@@ -12,12 +12,15 @@
     <!-- <div id='width'></div> -->
 
 <div class='text'><p>I have chosen a four digit number, using the numbers 1-9, with no repeats.</p>
-<p>The number of bulls indicates the number of digits you guessed that were both the correct number and in the correct position.</p><p>The number of cows indicates the number of (non-bull) digits you guessed that were the correct number, but in the wrong position.</p>
+<p>
+        <img src='images/bullIcon30.png' alt=''> = correct number in the correct position.<br>
+        <img src='images/cowIcon30.png' alt=''> = correct number in the wrong position.
+</p>
 <p>Can you guess the number in 10 tries?</p></div>
 
 <div class='loser hidden'><p>You did not guess the correct number, <span class='losing_secret_num'></span>.  Would you like to try again with a different number?</p></div>
 
-<div class='winning_secret hidden'><p>This is the paragraph for 'winning_secret'.<span class='winning_secret'></span></p></div>
+<div class='winning_text hidden'><p>You won using only <span class='winning_secret'></span> guesses!</p></div>
 
 <input id='playAgain' class='hidden' type="button" value="Play Again!" onclick='location.reload(true);'/>
 
